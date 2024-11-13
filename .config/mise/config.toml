@@ -5,3 +5,11 @@ python = "3.12"
 status.missing_tools = 'always'
 status.show_env = true
 status.show_tools = true
+experimental = true
+trusted_config_paths = [
+  '~/Music', '~/Documents',
+  '~/Projects',
+  '~/dotfiles',
+  '~/learn-git', '~/leetcode',
+  '~/todo_planning'
+]

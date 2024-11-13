@@ -1,2 +1,5 @@
 [core]
   editor = nvim
+[user]
+  email = dbellick93@gmail.com
+  name = Daniel Bellick
