@@ -1,0 +1,8 @@
+# Set vi-mode for Readline and specify which vi mode (command or insert) in the prompt
+set show-mode-in-prompt On
+set vi-cmd-mode-string "[N] "
+set vi-ins-mode-string "[I] "
+
+set keymap vi-insert
+"\C-l": clear-screen
+
