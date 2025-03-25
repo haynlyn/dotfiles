@@ -2,6 +2,7 @@ return {
    {
       "nvim-treesitter/nvim-treesitter",
       build = ":TSUpdate",
+      event = { "BufReadPre", "BufNewFile" },
       config = function()
          require("nvim-treesitter.configs").setup({
             auto_install = true,
@@ -20,9 +21,12 @@ return {
                "typescript",
                "tsx",
                "dockerfile",
+               "rust",
+               "bash",
             },
             highlight = { enable = true },
             indent = { enable = true },
+            incremental_selection = { enable = true },
          })
       end,
    },

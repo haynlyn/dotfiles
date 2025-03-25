@@ -12,9 +12,6 @@ local function map(mode, lhs, rhs, opts)
   vim.keymap.set(mode, lhs, rhs, opts)
 end
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 -- better up/down (how does this differ than before??)
 vim.keymap.set({"n", "x"}, "j", function()
   return vim.v.count > 0 and "j" or "gj"
