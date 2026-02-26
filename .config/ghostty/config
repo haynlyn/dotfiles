@@ -1,0 +1,17 @@
+background-opacity = .8
+# background-blur = true
+
+# window-decoration = auto 
+font-size = 11
+macos-non-native-fullscreen = visible-menu
+fullscreen = true
+macos-titlebar-style = hidden
+macos-option-as-alt = true
+quit-after-last-window-closed = true
+macos-window-shadow = false
+
+keybind = shift+enter=text:\x1b\r
+
+# updating
+auto-update-channel = stable
+auto-update = off

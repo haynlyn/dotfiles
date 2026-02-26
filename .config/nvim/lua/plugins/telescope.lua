@@ -1,7 +1,7 @@
 return {
    {
       "nvim-telescope/telescope.nvim",
-      tag = "0.1.8",
+      branch = "master",
       dependencies = { "nvim-lua/plenary.nvim" },
       opts = {
          defaults = {
@@ -15,18 +15,20 @@ return {
                hidden = true,
                no_ignore = true,
             })
-         end, {})
-         vim.keymap.set("n", "<leader>g", builtin.live_grep, {})
-         vim.keymap.set("n", "<leader>b", builtin.buffers, {})
-         vim.keymap.set("n", "<leader>h", builtin.help_tags, {})
+         end, { desc = "Find files" })
+         vim.keymap.set("n", "<leader>g", builtin.live_grep, { desc = "Live grep" })
+         vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "Buffers" })
+         vim.keymap.set("n", "<leader>h", builtin.help_tags, { desc = "Help tags" })
+         vim.keymap.set("n", "<leader>j", builtin.jumplist, { desc = "Jumplist" })
       end,
    },
    {
       "piersolenski/telescope-import.nvim",
+      branch = "main",
       dependencies = "nvim-telescope/telescope.nvim",
       config = function()
          require("telescope").load_extension("import")
-         vim.keymap.set("n", "<leader>i", ":Telescope import<cr>", {})
+         vim.keymap.set("n", "<leader>i", ":Telescope import<cr>", { desc = "Import" })
       end,
    },
 }

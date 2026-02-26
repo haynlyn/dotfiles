@@ -32,3 +32,6 @@ vim.opt.timeoutlen = 300
 vim.opt.guicursor = ""
 
 vim.opt.termguicolors = true
+
+-- don't persist jump list across sessions (keeps jumps session-local)
+vim.opt.shada = "!,'0,<50,s10,h"
