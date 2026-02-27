@@ -12,7 +12,7 @@ return {
       require("mason-lspconfig").setup({
         ensure_installed = {
           -- "pyright",
-          -- "ts_ls",
+          "ts_ls",
           "rust_analyzer",
           "lua_ls",
           "eslint",
@@ -41,12 +41,26 @@ return {
         },
       }
 
+      vim.lsp.config.ts_ls = {
+        cmd = { "typescript-language-server", "--stdio" },
+        filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+        root_markers = { "tsconfig.json", "jsconfig.json", "package.json", ".git" },
+        init_options = { hostInfo = "neovim" },
+      }
+
       vim.lsp.config.eslint = {
         cmd = { "vscode-eslint-language-server", "--stdio" },
         filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
-        root_markers = { ".eslintrc", ".eslintrc.js", ".eslintrc.json", "eslint.config.js", "eslint.config.mjs" },
+        root_markers = {
+          ".eslintrc", ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json",
+          "eslint.config.js", "eslint.config.mjs", "eslint.config.cjs",
+        },
+        workspace_required = true,
+        init_options = { provideFormatter = false },
         settings = {
-          format = false, -- let prettier handle formatting
+          eslint = {
+            format = { enable = false },
+          },
         },
       }
 
@@ -74,6 +88,7 @@ return {
       -- Enable the configured LSP servers
       vim.lsp.enable("rust_analyzer")
       vim.lsp.enable("lua_ls")
+      vim.lsp.enable("ts_ls")
       vim.lsp.enable("eslint")
       vim.lsp.enable("ty")
       vim.lsp.enable("ruff")
