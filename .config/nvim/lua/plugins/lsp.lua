@@ -60,6 +60,7 @@ return {
         settings = {
           eslint = {
             format = { enable = false },
+            nodePath = vim.NIL,
           },
         },
       }

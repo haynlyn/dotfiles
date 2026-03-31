@@ -18,6 +18,9 @@ Local leader: `\`
 | `Alt+j` | Resize window down |
 | `Alt+k` | Resize window up |
 | `Alt+l` | Resize window right |
+| `Ctrl+d` | Scroll down (cursor centered) |
+| `Ctrl+u` | Scroll up (cursor centered) |
+| `<Esc>` | Clear search highlights |
 
 ### File Explorer & Search
 
@@ -82,6 +85,8 @@ Local leader: `\`
 
 Auto-format on save is enabled for: `markdown`, `python`
 
+**Note:** `json` has `jq` configured as a formatter but is not auto-formatted on save. Use `<leader>cf` to format manually.
+
 ### Clipboard (System)
 
 | Key | Mode | Action |
@@ -109,6 +114,8 @@ Auto-format on save is enabled for: `markdown`, `python`
 | `cs{old}{new}` | Change surround | `cs"'` → change `"` to `'` |
 | `ds{char}` | Delete surround | `ds"` → delete surrounding `"` |
 | `S{char}` (visual) | Surround selection | Select text, `S]` → wrap in `[]` |
+
+**Note:** The default nvim-surround keymaps (`ys`/`yss`) are disabled in favour of `gs`/`gss`.
 
 Characters: `"`, `'`, `)`, `]`, `}`, `` ` ``, `t` (HTML tag)
 

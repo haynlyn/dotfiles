@@ -15,6 +15,7 @@ return {
     },
     opts = {
       formatters_by_ft = {
+        json = { "jq" },
         markdown = { "prettier" },
         python = { "ruff_format" },
       },

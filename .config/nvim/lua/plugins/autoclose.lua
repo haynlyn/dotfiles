@@ -15,12 +15,13 @@ return {
       version = "*",
       event = "VeryLazy",
       config = function()
-         require("nvim-surround").setup({
-            keymaps = {
-               normal = "gs",
-               normal_cur = "gss",
-            },
-         })
+         vim.g.nvim_surround_no_normal_mappings = true
+         require("nvim-surround").setup()
+         vim.keymap.set("n", "gs", "<Plug>(nvim-surround-normal)", { desc = "Add surround (motion)" })
+         vim.keymap.set("n", "gss", "<Plug>(nvim-surround-normal-cur)", { desc = "Add surround (line)" })
+         vim.keymap.set("n", "cs", "<Plug>(nvim-surround-change)", { desc = "Change surround" })
+         vim.keymap.set("n", "ds", "<Plug>(nvim-surround-delete)", { desc = "Delete surround" })
+         vim.keymap.set("x", "S", "<Plug>(nvim-surround-visual)", { desc = "Add surround (visual)" })
       end,
    },
 }

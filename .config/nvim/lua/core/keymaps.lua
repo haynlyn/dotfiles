@@ -20,6 +20,13 @@ vim.keymap.set({"n", "x"}, "k", function()
   return vim.v.count > 0 and "k" or "gk"
 end, { expr = true })
 
+-- keep cursor centered when scrolling
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- clear search highlights
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<cr>")
+
 -- system clipboard
 map( {"n", "v"}, "<Leader>y", '"+y', { desc = "Yank to clipboard" })
 map({ "n" }, "<Leader>Y", '"+y$', { desc = "Yank line to clipboard" })
@@ -34,7 +41,7 @@ vim.keymap.set('n', 'gd', function()
     on_list = function(options)
       if options.items and #options.items > 0 then
         local item = options.items[1]
-        vim.cmd('edit ' .. item.filename)
+        vim.cmd.edit(item.filename)
         vim.api.nvim_win_set_cursor(0, { item.lnum, item.col - 1 })
       end
     end
