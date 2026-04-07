@@ -71,6 +71,22 @@ Local leader: `\`
 | `gbc` | Toggle block comment (line) |
 | `gc` (visual) | Toggle comment (selection) |
 
+### Git (gitsigns.nvim + lazygit.nvim)
+
+| Key | Action |
+|-----|--------|
+| `<leader>lg` | Open LazyGit |
+| `]h` | Next hunk |
+| `[h` | Prev hunk |
+| `<leader>hs` | Stage hunk |
+| `<leader>hr` | Reset hunk |
+| `<leader>hb` | Toggle inline blame |
+| `<leader>hd` | Diff this file |
+
+Inline blame is enabled by default (dim virtual text at end of line).
+
+**Note:** LazyGit must be installed separately: `brew install lazygit`
+
 ### Undo History
 
 | Key | Action |
@@ -121,6 +137,8 @@ Characters: `"`, `'`, `)`, `]`, `}`, `` ` ``, `t` (HTML tag)
 
 ## Installed Plugins
 
+- **gitsigns.nvim** - Git signs, inline blame, hunk operations
+- **lazygit.nvim** - LazyGit TUI integration
 - **autoclose.nvim** - Auto-close brackets/quotes
 - **blink.cmp** - Fast autocompletion
 - **Comment.nvim** - Toggle comments with gcc
