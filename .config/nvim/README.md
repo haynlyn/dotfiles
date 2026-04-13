@@ -62,30 +62,66 @@ Local leader: `\`
 |-----|--------|
 | `<leader>s` | Lazy sync (update & reload plugins) |
 
-### Commenting (Comment.nvim)
+### Theme
+
+| Key | Action |
+|-----|--------|
+| `<leader>tb` | Toggle transparent background |
+
+### Git (LazyGit & Gitsigns)
+
+#### LazyGit
+
+| Key | Action |
+|-----|--------|
+| `<leader>lg` | Open LazyGit |
+
+#### Gitsigns - Navigation
+
+| Key | Action |
+|-----|--------|
+| `]h` | Next hunk |
+| `[h` | Previous hunk |
+
+#### Gitsigns - Hunk Actions
+
+| Key | Mode | Action |
+|-----|------|--------|
+| `<leader>Hs` | Normal/Visual | Stage hunk |
+| `<leader>Hr` | Normal/Visual | Reset hunk |
+| `<leader>Hu` | Normal | Undo stage hunk |
+| `<leader>Hp` | Normal | Preview hunk |
+
+#### Gitsigns - Buffer Actions
+
+| Key | Action |
+|-----|--------|
+| `<leader>GS` | Stage entire buffer |
+| `<leader>GR` | Reset entire buffer |
+
+#### Gitsigns - Blame & Diff
+
+| Key | Action |
+|-----|--------|
+| `<leader>Gb` | Toggle inline git blame (virtual text) |
+| `<leader>GB` | Git blame (full commit popup) |
+| `<leader>Gd` | Diff this file |
+| `<leader>Gt` | Toggle deleted lines |
+
+#### Gitsigns - Text Objects
+
+| Key | Action |
+|-----|--------|
+| `ih` | Select hunt (operator/visual mode) |
+
+### COmmenting (Comment.nvim)
 
 | Key | Action |
 |-----|--------|
 | `gcc` | Toggle comment (line) |
 | `gc{motion}` | Toggle comment (motion) |
 | `gbc` | Toggle block comment (line) |
-| `gc` (visual) | Toggle comment (selection) |
-
-### Git (gitsigns.nvim + lazygit.nvim)
-
-| Key | Action |
-|-----|--------|
-| `<leader>lg` | Open LazyGit |
-| `]h` | Next hunk |
-| `[h` | Prev hunk |
-| `<leader>hs` | Stage hunk |
-| `<leader>hr` | Reset hunk |
-| `<leader>hb` | Toggle inline blame |
-| `<leader>hd` | Diff this file |
-
-Inline blame is enabled by default (dim virtual text at end of line).
-
-**Note:** LazyGit must be installed separately: `brew install lazygit`
+| `gc` (visual)| Toggle comment (selection) |
 
 ### Undo History
 
@@ -137,8 +173,8 @@ Characters: `"`, `'`, `)`, `]`, `}`, `` ` ``, `t` (HTML tag)
 
 ## Installed Plugins
 
-- **gitsigns.nvim** - Git signs, inline blame, hunk operations
-- **lazygit.nvim** - LazyGit TUI integration
+- **gitsigns.nvim** - Git integration and hunk management
+- **lazygit.nvim** - Terminal UI for git
 - **autoclose.nvim** - Auto-close brackets/quotes
 - **blink.cmp** - Fast autocompletion
 - **Comment.nvim** - Toggle comments with gcc
