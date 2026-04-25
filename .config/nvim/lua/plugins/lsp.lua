@@ -86,6 +86,34 @@ return {
         root_markers = { "pyproject.toml", "ruff.toml", ".ruff.toml", "setup.py", ".git" },
       }
 
+      -- Configure SQLFluff - also installed manually
+      vim.lsp.config.sqlfluff = {
+        cmd = { "sqlfluff-language-server" },
+        filetypes = { "sql" },
+        root_markers = { ".sqlfluff", "pyproject.toml", ".git" },
+        settings = {
+          sqlfluff = {
+            dialect = "ansi",
+          },
+        },
+      }
+
+      -- Change sqlfluff dialect for the current buffer without editing .sqlfluff
+      -- (maybe this shouldn't be done? project dependent?)
+      vim.api.nvim_create_user_command("SqlSetDialect", function(args)
+        local dialect = args.args
+        for _, client in ipairs(vim.lsp.get_clients({ bufnr = 0, name = "sqlfluff" })) do
+          client.config.settings = vim.tbl_deep_extend("force", client.config.settings or {}, {
+            sqlfluff = { dialect = dialect },
+          })
+          client.notify("workspace/didChangeConfiguration", { settings = client.config.settings }) 
+        end
+        vim.notify("sqlfluff dialect set to: " .. dialect)
+      end, {
+        nargs = 1,
+        desc = "Set sqlfluff dialect for current buffer",
+    })
+
       -- Enable the configured LSP servers
       vim.lsp.enable("rust_analyzer")
       vim.lsp.enable("lua_ls")
@@ -93,6 +121,7 @@ return {
       vim.lsp.enable("eslint")
       vim.lsp.enable("ty")
       vim.lsp.enable("ruff")
+      vim.lsp.enable("sqlfluff")
     end,
   },
 }

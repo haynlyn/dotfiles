@@ -1,12 +1,12 @@
 vim.opt.mousemoveevent = true
 
--- enable line number and relative line number
+-- enable line number and disable relative line number
 vim.opt.number = true
 vim.opt.relativenumber = false
 
--- highlight the line number of the cursor
+-- highlight the line of the cursor
 vim.opt.cursorline = true
-vim.opt.cursorlineopt = "number"
+vim.opt.cursorlineopt = "line"
 
 
 -- width of a tab

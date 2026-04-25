@@ -207,7 +207,7 @@ Characters: `"`, `'`, `)`, `]`, `}`, `` ` ``, `t` (HTML tag)
 
 ## LSP Servers
 
-Configured via Mason and native `vim.lsp.config` (Neovim 0.11+):
+Configured via Mason and native `vim.lsp.config` (Neovim 0.11+): The following servers are managed by Mason: `rust_analyzer`, `lua_ls`, `ts_ls`, `eslint`. The following are installed manually: `ty`, `ruff`, `sqlfluff`
 
 | Language | Server |
 |----------|--------|
@@ -215,6 +215,7 @@ Configured via Mason and native `vim.lsp.config` (Neovim 0.11+):
 | Lua | lua_ls |
 | JavaScript/TypeScript | eslint |
 | Python | ty (type checking), ruff (linting) |
+| SQL | sqlfluff (linting/formatting) |
 
 **Note:** `ty` sometimes returns multiple definitions (class + constructor). The `gd` keymap auto-jumps to the first result as a workaround. Check [ty documentation](https://github.com/astral-sh/ty) for configuration options to change this behavior.
 
@@ -225,6 +226,27 @@ Configured via Mason and native `vim.lsp.config` (Neovim 0.11+):
 name = "my_project"
 version = "0.1.0"
 ```
+
+### SQL (sqlfluff)
+
+sqlfluff is installed manually. The default dialect is `ansi`. To configure dialect per-project, place a `.sqlfluff` file at the project root:
+```ini
+[sqlfluff]
+dialect = postgres
+```
+
+Supported dialect include: `ansi`, `postgres`, `mysql`, `bigquery`, `snowflake`, `spark3`, `trino`, `tsql`, `duckdb`, `redshift`, `sqlite`, and more.
+
+A `~/.sqlfluff` global config file is also respected as a fallback.
+
+To switch dialect for the current buffer mid-session without editing any config file:
+
+```
+:SqlSetDialect bigquery
+```
+
+This applies to the entire buffer - dialect cannot be scoped to a selcetion or region.
+
 
 ## Tips
 

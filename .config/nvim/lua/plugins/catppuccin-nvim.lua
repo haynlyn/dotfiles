@@ -11,6 +11,14 @@ return {
             WinSeparator = {
               fg = colors.lavender,
             },
+            --Current line: purple/lavender tint
+            CursorLine = {
+              bg = "#2a2040",
+            },
+            -- Visual selection: distinct teal/blue tint
+            Visual = {
+              bg = "#1e4a5a",
+            },
         }
       end,
       color_overrides = {

@@ -6,7 +6,7 @@ return {
       "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
    },
-   keys = { { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Toggle file explorer" } },
+   keys = { { "<leader>e", "<cmd>Neotree toggle reveal_force_cwd=true<cr>", desc = "Toggle file explorer" } },
    config = function()
       require("neo-tree").setup({
          close_if_last_window = true,

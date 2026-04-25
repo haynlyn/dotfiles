@@ -18,6 +18,7 @@ return {
         json = { "jq" },
         markdown = { "prettier" },
         python = { "ruff_format" },
+        sql = { "sqlfluff" },
       },
       format_on_save = function(bufnr)
         local filetype = vim.bo[bufnr].filetype
