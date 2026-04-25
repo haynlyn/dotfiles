@@ -25,7 +25,7 @@ vim.filetype.add({
     -- .bk / .bk.{description}
     [".*%.bk"] = detect_backup_filetype,
     [".*%.bk%..*"] = detect_backup_filetype,
-    -- .bakk / .baka.{description}
+    -- .baka / .baka.{description}
     [".*%.baka"] = detect_backup_filetype,
     [".*%.baka%..*"] = detect_backup_filetype,
   },
