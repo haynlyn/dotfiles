@@ -2,7 +2,7 @@ vim.opt.mousemoveevent = true
 
 -- enable line number and relative line number
 vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
 -- highlight the line number of the cursor
 vim.opt.cursorline = true
