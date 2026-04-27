@@ -3,6 +3,8 @@
 Leader key: `<Space>`
 Local leader: `\`
 
+> Tip: Use `<leader>r` to fuzzy search this README from anywhere.
+
 ## Keybindings
 
 ### Navigation & Windows
@@ -32,6 +34,7 @@ Local leader: `\`
 | `<leader>g` | Live grep (Telescope) |
 | `<leader>b` | List buffers (Telescope) |
 | `<leader>h` | Help tags (Telescope) |
+| `<leader>r` | Search this README (Telescope) |
 | `<leader>i` | Import search (Telescope) |
 | `<leader>j` | Jumplist (Telescope) |
 

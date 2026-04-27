@@ -19,6 +19,13 @@ return {
          vim.keymap.set("n", "<leader>g", builtin.live_grep, { desc = "Live grep" })
          vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "Buffers" })
          vim.keymap.set("n", "<leader>h", builtin.help_tags, { desc = "Help tags" })
+         vim.keymap.set("n", "<leader>r", function()
+            builtin.live_grep({
+               prompt_title = "Search README",
+               search_dirs = { vim.fn.expand("~/.config/nvim") },
+               glob_pattern = "README.md",
+            })
+         end, { desc = "Search nvim README" })
          vim.keymap.set("n", "<leader>j", builtin.jumplist, { desc = "Jumplist" })
       end,
    },
