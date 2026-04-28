@@ -13,6 +13,10 @@ return {
          window = {
             width = 30,
             position = "left",
+            mappings = {
+               ["<C-s>"] = "open_vsplit",
+               ["<C-x>"] = "open_split",
+            },
          },
          filesystem = {
             filtered_items = {

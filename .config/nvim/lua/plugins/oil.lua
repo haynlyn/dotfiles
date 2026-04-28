@@ -9,6 +9,7 @@ return {
          keymaps = {
             ["<C-h>"] = false, -- disable to keep window navigation
             ["<C-l>"] = false,
+["<C-x>"] = { "actions.select", opts = { horizontal = true }, desc = "Open in horizontal split" },
          },
       })
       vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Open parent directory" })
